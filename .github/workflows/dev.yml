@@ -9,7 +9,8 @@ jobs:
   build-and-deploy-dev:
     name: Build and deploy backend-app dev
     runs-on: ubuntu-latest
-    environment: dev
+    env:
+      environment: dev
     steps:
       - name: Checkout
         uses: actions/checkout@v2
