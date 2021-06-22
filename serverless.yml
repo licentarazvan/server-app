@@ -16,3 +16,7 @@ functions:
           path: /{proxy+}
           method: ANY
           cors: true
+provider:
+  s3:
+    backend-bucket:
+      name: s3-todo-react-app-backend
