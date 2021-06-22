@@ -25,8 +25,8 @@ jobs:
           ls -la ~/.npm
       - name: Update serverless config
         run: |
-          echo {{ env.environment }}
-          sed -i "s/%env%/{{ env.environment }}/g" serverless.yml
+          echo $environment
+          sed -i "s/%env%/$environment/g" serverless.yml
           cat serverless.yml
       - name: Configure AWS Credentials
         run:
