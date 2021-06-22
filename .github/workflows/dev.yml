@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  build-dev:
+  build-and-deploy-dev:
     name: Build backend-app dev
     runs-on: ubuntu-latest
     environment: dev
@@ -16,12 +16,6 @@ jobs:
       - name: Install Packages
         run:
           npm install
-  deploy-dev:
-    name: Deploy backend-app dev
-    runs-on: ubuntu-latest
-    needs: build-dev
-    environment: dev
-    steps:
       - name: Check
         run: |
           ls -la
