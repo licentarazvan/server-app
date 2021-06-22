@@ -25,7 +25,7 @@ jobs:
           sed -i "s/%env%/{{ parameters.environment }}/g" serverless.yml
       - name: Configure AWS Credentials
         run:
-          serverless config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          npm/serverless config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Configure AWS Credentials
         run:
-          serverless deploy
+          npm/serverless deploy
