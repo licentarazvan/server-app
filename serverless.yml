@@ -1,0 +1,18 @@
+service: todo-react-app-backend
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: %env%
+  region: us-west-1
+functions:
+  app:
+    handler: server.handler
+    events: 
+      - http: 
+          path: /
+          method: ANY
+          cors: true
+      - http: 
+          path: /{proxy+}
+          method: ANY
+          cors: true
