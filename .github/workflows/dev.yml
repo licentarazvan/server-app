@@ -20,6 +20,7 @@ jobs:
         run: |
           ls -la
           pwd
+          ls -la ~
           ls -la ~/.npm
       - name: Update serverless config
         run:
