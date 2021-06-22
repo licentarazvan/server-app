@@ -22,6 +22,10 @@ jobs:
     needs: build-dev
     environment: dev
     steps:
+      - name: Check
+        run: |
+          ls -la
+          pwd
       - name: Update serverless config
         run:
           sed -i "s/%env%/{{ parameters.environment }}/g" serverless.yml
