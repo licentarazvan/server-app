@@ -5,8 +5,8 @@ provider:
   stage: %env%
   region: us-west-1
   s3:
-    backend-bucket:
-      name: s3-todo-react-app-backend
+    bucketOne:
+      name: todo-react-app-backend
 functions:
   app:
     handler: server.handler
