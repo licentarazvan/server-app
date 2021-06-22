@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Install Packages
         run:
-          npm install --save
+          npm install
       - name: Check
         run: |
           ls -la
@@ -27,7 +27,7 @@ jobs:
           sed -i "s/%env%/{{ parameters.environment }}/g" serverless.yml
       - name: Configure AWS Credentials
         run:
-          npm/serverless config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          ./node_modules/.bin/serverless config credentials --provider aws --key ${{ secrets.AWS_ACCESS_KEY_ID }} --secret ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Configure AWS Credentials
         run:
-          npm/serverless deploy
+          ./node_modules/.bin/serverless deploy
