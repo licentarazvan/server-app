@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy-dev:
-    name: Build backend-app dev
+    name: Build and deploy backend-app dev
     runs-on: ubuntu-latest
     environment: dev
     steps:
@@ -20,7 +20,7 @@ jobs:
         run: |
           ls -la
           pwd
-          ls -la ~
+          ls -la ~/.npm
       - name: Update serverless config
         run:
           sed -i "s/%env%/{{ parameters.environment }}/g" serverless.yml
