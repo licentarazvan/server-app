@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 })
 
 mongoose.connect("mongodb+srv://razvan:razvan@cluster0.xuvwh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
-        .then(console.log('MAM CONECTAT!'))
+        .then(console.log('CONNECTED!'))
         .catch(error => (error));
 
 // const TaskSchema = mongoose.Schema;
@@ -36,8 +36,8 @@ mongoose.connect("mongodb+srv://razvan:razvan@cluster0.xuvwh.mongodb.net/myFirst
 //   }  
 // });
 
-app.listen(5000, () => {
-  console.log(`Example app listening on port 5000!`)
-});
+//app.listen(5000, () => {
+//  console.log(`Example app listening on port 5000!`)
+//});
 
 module.exports.handler = serverless(app);

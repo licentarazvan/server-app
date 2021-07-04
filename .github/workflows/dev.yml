@@ -1,4 +1,4 @@
-name: dev
+name: server
 
 on:
   push:
@@ -6,8 +6,8 @@ on:
       - master
 
 jobs:
-  build-and-deploy-dev:
-    name: Build and deploy backend-app dev
+  build-and-deploy:
+    name: Build and deploy backend-app
     runs-on: ubuntu-latest
     env:
       environment: staging
@@ -17,12 +17,12 @@ jobs:
       - name: Install Packages
         run:
           npm install
-      - name: Check
-        run: |
-          ls -la
-          pwd
-          ls -la ~
-          ls -la ~/.npm
+          #      - name: Check
+          #        run: |
+          #          ls -la
+          #          pwd
+          #          ls -la ~
+          #          ls -la ~/.npm
       - name: Update serverless config
         run: |
           echo $environment
