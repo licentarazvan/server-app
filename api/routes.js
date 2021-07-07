@@ -44,7 +44,7 @@ router.patch('/update/:id', async (req, res) => {
 router.delete('/delete/:name', async (req, res) => {
     try{
         
-       await Tasks.findOneAndDelete(req.params.name);
+       await Tasks.findOneAndDelete({"name": req.params.name});
         res.json({message: "Task sters cu succes!"});
 
     } catch (err){
