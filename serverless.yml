@@ -1,4 +1,4 @@
-service: todo-react-app-backend
+service: todo-react-app-backend-try-1
 provider:
   name: aws
   runtime: nodejs14.x
